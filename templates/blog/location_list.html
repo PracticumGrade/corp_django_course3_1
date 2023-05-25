@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+  Локации
+{% endblock %}
+{% block content %}
+  {% for location in page_obj %}
+    {% if not forloop.first %}
+      <hr>
+    {% endif %}
+    <article class="mb-5">
+      <h3>{{ location.name }}</h3>
+      <a class="text-muted" href="{{ location.get_absolute_url }}">Посмотреть локацию</a>
+    </article>
+  {% endfor %}
+  {% include "includes/paginator.html" %}
+{% endblock %}

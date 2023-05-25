@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %}
+  Удалить локацию
+{% endblock %}
+
+{% block content %}
+  <h1>Удалить запись {{ object.pk }}</h1>
+  <div class="card col-4 m-3">
+    <div class="card-header">
+      {{ object.name }}
+    </div>
+    <div class="card-body">
+      <!-- В форме только csrf-токен и кнопка. Никакие другие поля тут не нужны.  -->
+      <form method="post">
+        {% csrf_token %}
+        {% bootstrap_button button_type="submit" content="Удалить" %}
+      </form>
+    </div>
+  </div>
+{% endblock content %}
