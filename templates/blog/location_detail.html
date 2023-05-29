@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{ object.name }}
+{% endblock %}
+
+{% block content %}
+  <h1>Информация о локации</h1>
+  <hr>
+  <h2>{{ object.name }}</h2>
+  <div class="mb-2">
+    <a class="btn btn-sm text-muted" href="{% url 'blog:location_change' object.pk %}" role="button">
+      Отредактировать локацию
+    </a>
+    <a class="btn btn-sm text-muted" href="{% url 'blog:location_delete' object.pk %}" role="button">
+      Удалить локацию
+    </a>
+  </div>
+
+{% endblock content %}
